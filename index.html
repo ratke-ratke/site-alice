@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Alice Ratke — Tráfego pago</title>
+  <meta name="description" content="Conheça o trabalho de Alice Ratke e descubra como o tráfego pago pode ajudar o seu negócio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --paper: #f7f5ef;
+      --ink: #23332c;
+      --muted: #6e7972;
+      --green: #315b49;
+      --green-dark: #244536;
+      --lime: #d9e4bd;
+      --line: #e5e3db;
+      --white: #fff;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'DM Sans', sans-serif;
+      --display: 'Manrope', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+
+    /* Header & Navigation */
+    .topbar { height: 82px; display: flex; align-items: center; border-bottom: 1px solid rgba(35,51,44,.09); }
+    .nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .brand { font: 700 16px var(--display); letter-spacing: -.04em; }
+    .brand-mark { color: var(--green); font-size: 21px; margin-right: 8px; }
+    .nav-links { display: flex; gap: 34px; align-items: center; color: #626c65; font-size: 13px; }
+    .nav-links a:hover { color: var(--green); }
+    .button {
+      border: 0; border-radius: 999px; padding: 14px 21px; font-weight: 600; font-size: 13px;
+      transition: .2s; background: var(--green); color: white; display: inline-flex; align-items: center;
+      justify-content: center; gap: 9px;
+    }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button.outline { background: transparent; color: var(--green); border: 1px solid #a8b7a9; }
+    .button.outline:hover { background: #edf0e7; }
+    .button.small { padding: 10px 15px; font-size: 12px; }
+    .edit-button { background: var(--ink); color: #fff; }
+    .edit-button:hover { background: #34483d; }
+
+    /* Hero Section */
+    .hero { padding: 66px 0 76px; display: grid; grid-template-columns: 1fr .91fr; gap: 70px; align-items: center; min-height: 590px; }
+    .eyebrow { font-size: 11px; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 10px; }
+    .eyebrow:before { content: ''; width: 25px; height: 1px; background: #91a28e; }
+    .hero h1 { font: 500 clamp(44px,5vw,68px)/1.08 var(--display); letter-spacing: -.065em; margin: 23px 0 19px; max-width: 620px; }
+    .hero h1 em { font: italic 500 1.02em var(--serif); color: var(--green); }
+    .hero-copy { max-width: 470px; color: var(--muted); font-size: 16px; line-height: 1.8; margin: 0; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; margin-top: 31px; }
+    .note { font-size: 11px; color: #89928a; margin-top: 26px; }
+    .hero-visual { position: relative; padding: 0 0 27px 24px; }
+    .hero-photo { width: 100%; height: 440px; object-fit: cover; border-radius: 190px 190px 12px 12px; display: block; background: #d9dfd3; }
+    .photo-frame { position: absolute; width: 130px; height: 130px; border: 1px solid #bdc7b7; border-radius: 50%; top: 18px; left: 0; z-index: -1; }
+    .hero-stamp { position: absolute; left: -21px; bottom: 44px; border-radius: 50%; width: 118px; height: 118px; background: var(--lime); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--green-dark); font: italic 15px/1.3 var(--serif); transform: rotate(-8deg); box-shadow: 0 8px 24px #23332c16; }
+    .photo-caption { position: absolute; right: 18px; bottom: 0; background: #fff; padding: 14px 19px; border-radius: 4px; box-shadow: 0 8px 24px #23332c0e; font-size: 11px; color: var(--muted); }
+    .photo-caption strong { display: block; color: var(--ink); font-size: 12px; margin-bottom: 4px; }
+
+    /* Trust Strip */
+    .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 19px 0; }
+    .trust-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #657168; font-size: 12px; }
+    .trust-label { font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; }
+    .check { font-size: 16px; color: #779474; }
+
+    /* Section Headers */
+    .section { padding: 100px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
+    .section-kicker { font-size: 11px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    .section h2 { font: 500 clamp(34px,4vw,49px)/1.12 var(--display); letter-spacing: -.055em; margin: 13px 0 0; }
+    .section-head p { font-size: 14px; line-height: 1.75; color: var(--muted); max-width: 340px; margin: 0 0 5px; }
+
+    /* Services & Cards */
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 19px; }
+    .service-card { border: 1px solid var(--line); background: #fbfaf6; padding: 12px 12px 23px; transition: .25s; border-radius: 8px; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px #23332c0d; }
+    
+    /* Media Wrapper for HTML5 Video & Embeds */
+    .media-container { height: 280px; overflow: hidden; background: #19251f; position: relative; border-radius: 6px; }
+    .media-container img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; display: block; }
+    .media-container video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .media-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .service-number { position: absolute; top: 12px; left: 12px; background: rgba(247,245,239,0.92); padding: 5px 9px; font-size: 10px; font-weight: 700; color: var(--green); z-index: 5; border-radius: 4px; }
+    .video-badge { position: absolute; top: 12px; right: 12px; background: rgba(35,51,44,.85); color: #fff; padding: 4px 8px; font-size: 10px; font-weight: 600; border-radius: 4px; z-index: 5; backdrop-filter: blur(4px); }
+    
+    /* Video Interactive Control Overlay */
+    .video-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.25); display: flex;
+      align-items: center; justify-content: center; z-index: 4; transition: opacity .2s;
+    }
+    .video-overlay.playing { opacity: 0; }
+    .video-overlay.playing:hover { opacity: 1; background: rgba(0,0,0,0.4); }
+    .play-btn {
+      width: 48px; height: 48px; border-radius: 50%; background: var(--green); color: white;
+      border: 0; display: flex; align-items: center; justify-content: center; font-size: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3); transition: transform .15s;
+    }
+    .play-btn:hover { transform: scale(1.1); }
+    .mute-btn {
+      position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white;
+      border: 0; border-radius: 20px; padding: 4px 8px; font-size: 11px; z-index: 5;
+    }
+
+    .service-card h3 { font: 600 19px var(--display); letter-spacing: -.04em; margin: 21px 12px 9px; }
+    .service-card p { margin: 0 12px; color: var(--muted); font-size: 13px; line-height: 1.7; min-height: 66px; }
+    .service-link { display: inline-flex; align-items: center; gap: 8px; margin: 17px 12px 0; color: var(--green); font-size: 12px; font-weight: 700; }
+    .service-link span { font-size: 17px; transition: .2s; }
+    .service-link:hover span { transform: translateX(4px); }
+
+    /* About Section */
+    .about { background: #e9ede3; padding: 88px 0; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 88px; align-items: center; }
+    .about-art { height: 370px; background: var(--green); position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 29px; border-radius: 8px; }
+    .about-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .52; mix-blend-mode: luminosity; }
+    .about-art:after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(30,57,43,0.6)); }
+    .art-label { z-index: 1; color: #fff; font: italic 24px var(--serif); }
+    .about-copy h2 { font: 500 clamp(34px,4vw,47px)/1.15 var(--display); letter-spacing: -.06em; margin: 15px 0 20px; }
+    .about-copy p { max-width: 510px; color: #5e6b61; font-size: 14px; line-height: 1.9; }
+    .about-sign { font: italic 20px var(--serif); color: var(--green); margin-top: 23px; }
+
+    /* Portfolio Section */
+    .gallery { padding-bottom: 104px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-auto-rows: 250px; gap: 13px; }
+    .gallery-item { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px; background: #e5e2d8; }
+    .gallery-item:first-child { grid-row: span 2; }
+
+    /* Contact Section */
+    .contact { padding: 72px 0; background: var(--green-dark); color: white; }
+    .contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .contact .section-kicker { color: #d0ddb6; }
+    .contact h2 { font: 500 clamp(33px,4vw,47px)/1.14 var(--display); letter-spacing: -.06em; margin: 13px 0 10px; }
+    .contact p { color: #d4ded4; font-size: 14px; margin: 0; }
+    .contact-actions { display: flex; gap: 11px; flex-wrap: wrap; }
+    .contact .button { background: #dbe5c6; color: #284436; }
+    .contact .button:hover { background: #e9f0db; }
+    .contact .button.outline { border-color: #91a590; color: white; background: transparent; }
+    .contact .button.outline:hover { background: rgba(255,255,255,0.09); }
+    
+    .footer { padding: 26px 0; color: #7f8880; font-size: 11px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+    .footer-brand { color: var(--ink); font-weight: 700; font-size: 13px; }
+
+    /* Admin Login Modal & Personalization Editor */
+    .editor-backdrop, .login-backdrop {
+      position: fixed; inset: 0; z-index: 1000; background: rgba(25, 37, 31, 0.82);
+      display: none; justify-content: center; align-items: center;
+    }
+    .editor-backdrop.open, .login-backdrop.open { display: flex; }
+    .editor-backdrop { justify-content: flex-end; }
+    
+    .editor {
+      background: var(--paper); width: min(620px, 100%); height: 100%; overflow: auto;
+      padding: 0 27px 35px; box-shadow: -15px 0 50px rgba(0,0,0,0.2);
+    }
+    .login-box {
+      background: var(--paper); width: min(400px, calc(100% - 32px)); padding: 32px;
+      border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); position: relative;
+    }
+    .login-box h2 { font: 700 22px var(--display); margin: 0 0 8px; color: var(--ink); }
+    .login-box p { font-size: 13px; color: var(--muted); margin: 0 0 20px; }
+    .login-error { background: #fde8e8; color: #9b1c1c; padding: 10px 12px; border-radius: 6px; font-size: 12px; margin-bottom: 15px; display: none; }
+
+    .editor-head {
+      position: sticky; top: 0; background: var(--paper); padding: 21px 0 17px;
+      border-bottom: 1px solid var(--line); display: flex; justify-content: space-between;
+      align-items: center; z-index: 10;
+    }
+    .editor-head h2 { font: 700 19px var(--display); margin: 0; letter-spacing: -.04em; }
+    .close-button {
+      width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%;
+      background: transparent; font-size: 20px; color: var(--ink); display: flex;
+      align-items: center; justify-content: center;
+    }
+    .editor-intro { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 17px 0 22px; }
+    .edit-section { border-top: 1px solid var(--line); padding: 20px 0; }
+    .edit-section h3 { font: 700 13px var(--display); margin: 0 0 15px; }
+    .field { margin-bottom: 13px; }
+    .field label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 6px; color: #526056; }
+    .field input, .field textarea, .field select {
+      width: 100%; background: #fff; border: 1px solid #dfdfd5; border-radius: 5px;
+      padding: 10px 11px; color: var(--ink); font-size: 12px; outline: none;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      border-color: #7b987f; box-shadow: 0 0 0 2px rgba(82,123,88,0.1);
+    }
+    .field textarea { min-height: 83px; resize: vertical; line-height: 1.5; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+    .upload-row { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+    .upload-preview { width: 58px; height: 58px; object-fit: cover; border-radius: 5px; background: #e6e6dc; }
+    .upload-label { display: inline-flex; align-items: center; gap: 6px; color: var(--green); font-size: 11px; font-weight: 700; cursor: pointer; }
+    .upload-label input { display: none; }
+    
+    .service-edit { padding: 14px; background: #efeee7; margin-bottom: 14px; border-radius: 6px; }
+    .service-edit-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .service-edit-top strong { font-size: 11px; }
+    .text-button { border: 0; background: none; color: #a34e42; font-size: 11px; padding: 4px; }
+    .add-button { border: 1px dashed #a6b3a3; background: transparent; color: var(--green); border-radius: 5px; padding: 10px 13px; font-size: 11px; font-weight: 700; width: 100%; }
+    
+    .gallery-edit-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .gallery-thumb { width: 68px; height: 60px; object-fit: cover; border-radius: 4px; background: #e6e6dc; }
+    .gallery-thumb-wrap { position: relative; }
+    .gallery-thumb-wrap button { position: absolute; right: -5px; top: -6px; background: #25372d; color: white; border: 0; border-radius: 50%; width: 19px; height: 19px; line-height: 18px; font-size: 12px; }
+    
+    .editor-footer { position: sticky; bottom: -35px; background: var(--paper); padding: 16px 0 15px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .saved-note { font-size: 10px; color: var(--muted); }
+    .toast { position: fixed; z-index: 2000; bottom: 22px; left: 50%; transform: translate(-50%,20px); opacity: 0; background: var(--ink); color: white; padding: 12px 18px; border-radius: 999px; font-size: 12px; transition: .25s; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translate(-50%,0); }
+
+    /* Responsive adjustments */
+    @media(max-width: 800px) {
+      .wrap { width: min(100% - 34px, 620px); }
+      .topbar { height: 70px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding: 53px 0 60px; }
+      .hero-visual { width: min(100%,500px); margin: 0 auto; padding-left: 17px; }
+      .hero-photo { height: 390px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .gallery-grid { grid-template-rows: 200px 200px; }
+      .contact-inner { display: block; }
+    }
+    @media(max-width: 520px) {
+      .hero h1 { font-size: 42px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; grid-auto-rows: 220px; }
+      .gallery-grid .gallery-item:first-child { grid-row: auto; }
+      .field-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio"><span class="brand-mark">✳</span><span id="brandName">Alice Ratke</span></a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#portfolio">Portfólio</a>
+        <button class="button small edit-button" id="openEditor">✎ Personalizar página</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="wrap hero" id="inicio">
+      <div>
+        <div class="eyebrow" id="role">Especialista em tráfego pago</div>
+        <h1 id="headline">Atraia as pessoas certas para o seu negócio.</h1>
+        <p class="hero-copy" id="intro">Planejamento, gestão e otimização de anúncios online, com campanhas alinhadas aos objetivos do seu negócio.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="button" id="heroCta">Quero anunciar com estratégia <span>↗</span></a>
+          <a href="#servicos" class="button outline">Conheça os serviços</a>
+        </div>
+        <div class="note" id="heroLocation">Atendimento online · Brasil todo</div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame"></div>
+        <img class="hero-photo" id="profilePhoto" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85" alt="Alice Ratke">
+        <div class="hero-stamp">feito com<br>intenção<br>e cuidado</div>
+        <div class="photo-caption">
+          <strong id="captionName">Alice Ratke</strong>
+          <span>estratégia e desempenho</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="wrap trust-inner">
+        <div class="trust-label">Tráfego pago com intenção</div>
+        <div class="trust-item"><span class="check">✳</span> Estratégia alinhada ao negócio</div>
+        <div class="trust-item"><span class="check">✳</span> Acompanhamento de métricas</div>
+        <div class="trust-item"><span class="check">✳</span> Otimização contínua</div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section wrap" id="servicos">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Como posso ajudar</div>
+          <h2>Campanhas para cada<br>etapa do seu negócio.</h2>
+        </div>
+        <p>Do planejamento à otimização, escolha o apoio que combina com os objetivos da sua empresa.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-art">
+          <img id="aboutPhoto" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85" alt="Análise de tráfego">
+          <div class="art-label">Estratégia para o seu negócio</div>
+        </div>
+        <div class="about-copy">
+          <div class="section-kicker">Prazer, sou <span id="aboutName">Alice</span></div>
+          <h2>Estratégia, dados e atenção ao que importa.</h2>
+          <p id="bio">Meu trabalho com tráfego pago começa entendendo os objetivos do seu negócio. A partir daí, planejo campanhas, acompanho os dados e identifico oportunidades de otimização para alcançar as pessoas certas.</p>
+          <p>Cada estratégia é desenvolvida com clareza, acompanhamento próximo e decisões orientadas pelos resultados das campanhas.</p>
+          <div class="about-sign" id="signature">Alice Ratke</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Gallery Section -->
+    <section class="section wrap gallery" id="portfolio">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Inspirações e projetos</div>
+          <h2>Estratégia em cada<br>etapa da campanha.</h2>
+        </div>
+        <p>Um pouco do planejamento, das análises e dos vídeos Reels/Shorts de resultados de campanhas digitais.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+      <div class="wrap contact-inner">
+        <div>
+          <div class="section-kicker">Vamos tirar sua ideia do papel?</div>
+          <h2>Vamos conversar sobre<br>o seu próximo passo?</h2>
+          <p>Escolha um canal de contato para conversar sobre os próximos passos do seu negócio.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" id="whatsappLink" href="https://wa.me/" target="_blank" rel="noreferrer">Falar pelo WhatsApp <span>↗</span></a>
+          <a class="button outline" id="emailLink" href="mailto:">Enviar um e-mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand" id="footerName">Alice Ratke</span>
+      <span>Feito com cuidado, para apresentar o seu trabalho.</span>
+      <span>© <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <!-- Admin Password Login Modal -->
+  <div class="login-backdrop" id="loginBackdrop" role="dialog" aria-modal="true">
+    <div class="login-box">
+      <button class="close-button" id="closeLogin" aria-label="Fechar" style="position:absolute;top:20px;right:20px">×</button>
+      <h2>Painel de Controle</h2>
+      <p>Digite seu usuário e senha de administrador para personalizar a página.</p>
+      <div class="login-error" id="loginError">Usuário ou senha incorretos!</div>
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginUser">Usuário</label>
+          <input id="loginUser" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="loginPass">Senha</label>
+          <input type="password" id="loginPass" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="button" style="width:100%;margin-top:10px">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Personalization Panel Modal -->
+  <div class="editor-backdrop" id="editorBackdrop" role="dialog" aria-modal="true">
+    <aside class="editor">
+      <div class="editor-head">
+        <h2>Personalize sua página</h2>
+        <button class="close-button" id="closeEditor" aria-label="Fechar">×</button>
+      </div>
+      <p class="editor-intro">Edite informações, altere serviços e adicione vídeos/fotos ao seu portfólio.</p>
+
+      <section class="edit-section">
+        <h3>Sua apresentação</h3>
+        <div class="field-row">
+          <div class="field"><label for="editName">Seu nome</label><input id="editName"></div>
+          <div class="field"><label for="editRole">O que você faz</label><input id="editRole"></div>
+        </div>
+        <div class="field"><label for="editHeadline">Frase de destaque</label><input id="editHeadline"></div>
+        <div class="field"><label for="editIntro">Texto de apresentação</label><textarea id="editIntro"></textarea></div>
+        <div class="field"><label for="editBio">Sobre você</label><textarea id="editBio"></textarea></div>
+        <div class="field">
+          <label>Foto Principal</label>
+          <div class="upload-row">
+            <img class="upload-preview" id="profilePreview" alt="Prévia">
+            <label class="upload-label">↑ Trocar foto<input type="file" accept="image/*" id="profileUpload"></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="edit-section">
+        <h3>Seus Serviços & Vídeos (Reels/Shorts/MP4)</h3>
+        <div id="serviceEditor"></div>
+        <button class="add-button" id="addService">＋ Adicionar Serviço</button>
+      </section>
+
+      <section class="edit-section">
+        <h3>Portfólio / Galeria (Imagens ou Vídeos)</h3>
+        <div class="field-row">
+          <div class="field">
+            <label class="upload-label" style="background:#fff;border:1px solid #dfdfd5;padding:10px;border-radius:5px;width:100%;justify-content:center">
+              ＋ Imagem Local <input type="file" accept="image/*" id="galleryUpload" multiple>
+            </label>
+          </div>
+          <div class="field">
+            <label class="upload-label" style="background:#fff;border:1px solid #dfdfd5;padding:10px;border-radius:5px;width:100%;justify-content:center">
+              ＋ Vídeo MP4 Local <input type="file" accept="video/*" id="galleryVideoUpload">
+            </label>
+          </div>
+        </div>
+        <div class="field" style="margin-top:10px">
+          <label for="galleryUrlAdd">Ou Cole Link de Vídeo (YouTube Shorts / Reel / MP4):</label>
+          <div style="display:flex;gap:6px">
+            <input id="galleryUrlAdd" placeholder="https://youtube.com/shorts/... ou mp4">
+            <button class="button small" type="button" id="addGalleryUrlBtn">Adicionar</button>
+          </div>
+        </div>
+        <div class="gallery-edit-list" id="galleryEditor"></div>
+      </section>
+
+      <section class="edit-section">
+        <h3>Contato & Localização</h3>
+        <div class="field-row">
+          <div class="field"><label for="editWhatsapp">WhatsApp (ex: 5511999999999)</label><input id="editWhatsapp"></div>
+          <div class="field"><label for="editEmail">E-mail</label><input id="editEmail" type="email"></div>
+        </div>
+        <div class="field"><label for="editLocation">Local de atendimento</label><input id="editLocation"></div>
+      </section>
+
+      <section class="edit-section">
+        <h3>Segurança (Acesso ao Painel)</h3>
+        <div class="field-row">
+          <div class="field"><label for="editAdminUser">Usuário Admin</label><input id="editAdminUser"></div>
+          <div class="field"><label for="editAdminPass">Nova Senha Admin</label><input type="password" id="editAdminPass"></div>
+        </div>
+      </section>
+
+      <div class="editor-footer">
+        <span class="saved-note">Salvo neste navegador.</span>
+        <div style="display:flex;gap:8px">
+          <button class="button outline small" id="logoutButton">Sair</button>
+          <button class="button outline small" id="resetButton">Restaurar Padrões</button>
+          <button class="button small" id="saveButton">Salvar Alterações</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast">Alterações salvas com sucesso!</div>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    // Sample high-compatibility vertical videos for Instant Testing
+    const sampleVideo1 = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
+    const sampleVideo2 = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4";
+    const defaultPhoto = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85";
+
+    const defaults = {
+      adminUser: 'ALICE',
+      adminPass: 'ÇLeo0110',
+      name: 'Alice Ratke',
+      role: 'Especialista em tráfego pago',
+      headline: 'Atraia as pessoas certas para o seu negócio.',
+      intro: 'Planejamento, gestão e otimização de anúncios online, com campanhas alinhadas aos objetivos do seu negócio.',
+      bio: 'Meu trabalho com tráfego pago começa entendendo os objetivos do seu negócio. A partir daí, planejo campanhas, acompanho os dados e identifico oportunidades de otimização para alcançar as pessoas certas.',
+      photo: defaultPhoto,
+      location: 'Atendimento online · Brasil todo',
+      whatsapp: '5511999999999',
+      email: 'contato@aliceratke.com.br',
+      services: [
+        {
+          title: 'Planejamento de campanhas',
+          description: 'Definição de objetivos, público e estrutura para começar a anunciar com um plano claro.',
+          mediaType: 'image',
+          mediaUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80'
+        },
+        {
+          title: 'Gestão de anúncios (Reels)',
+          description: 'Criação e otimização constante de anúncios em formato Reels e Shorts para aumentar suas vendas.',
+          mediaType: 'video',
+          mediaUrl: sampleVideo1
+        },
+        {
+          title: 'Análise e otimização',
+          description: 'Leitura detalhada de métricas e métricas de conversão para potencializar seus resultados.',
+          mediaType: 'image',
+          mediaUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80'
+        }
+      ],
+      gallery: [
+        { type: 'video', url: sampleVideo1 },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=80' },
+        { type: 'video', url: sampleVideo2 },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80' }
+      ]
+    };
+
+    let authenticated = false;
+    const clone = x => JSON.parse(JSON.stringify(x));
+    let data = loadData();
+
+    function loadData() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('apresentacao-personalizada-alice') || '{}');
+        return { ...clone(defaults), ...saved };
+      } catch {
+        return clone(defaults);
+      }
+    }
+
+    function esc(s = '') {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    // Helper: Convert YouTube Shorts / Watch or Instagram Links to Embed IFrames
+    function getEmbedMediaHtml(url, isService = false) {
+      if (!url) return `<img src="${defaultPhoto}" alt="Fallback">`;
+      
+      const cleanUrl = url.trim();
+
+      // YouTube Shorts / Watch link detection
+      if (cleanUrl.includes('youtube.com') || cleanUrl.includes('youtu.be')) {
+        let videoId = '';
+        if (cleanUrl.includes('shorts/')) {
+          videoId = cleanUrl.split('shorts/')[1].split('?')[0];
+        } else if (cleanUrl.includes('v=')) {
+          videoId = cleanUrl.split('v=')[1].split('&')[0];
+        } else if (cleanUrl.includes('youtu.be/')) {
+          videoId = cleanUrl.split('youtu.be/')[1].split('?')[0];
+        }
+        if (videoId) {
+          return `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1" allow="autoplay; encrypted-media" allowfullscreen></iframe><span class="video-badge">▶ Shorts</span>`;
+        }
+      }
+
+      // Instagram Reel link detection
+      if (cleanUrl.includes('instagram.com/reel/') || cleanUrl.includes('instagram.com/p/')) {
+        const parts = cleanUrl.split('/reel/')[1] || cleanUrl.split('/p/')[1];
+        if (parts) {
+          const code = parts.split('/')[0];
+          return `<iframe src="https://www.instagram.com/p/${code}/embed" allowtransparency="true" allowfullscreen></iframe><span class="video-badge">▶ Reel</span>`;
+        }
+      }
+
+      // Default to Native HTML5 Video for direct MP4/WebM/DataURL or Blobs
+      const videoId = 'vid_' + Math.random().toString(36).substr(2, 9);
+      return `
+        <video id="${videoId}" src="${esc(cleanUrl)}" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="video-overlay" id="overlay_${videoId}">
+          <button class="play-btn" onclick="togglePlay('${videoId}')" title="Play/Pause">▶</button>
+        </div>
+        <button class="mute-btn" onclick="toggleMute('${videoId}', this)">Som 🔇</button>
+        <span class="video-badge">▶ Vídeo</span>
+      `;
+    }
+
+    // Interactive Video Controls Handlers
+    window.togglePlay = function(vidId) {
+      const vid = document.getElementById(vidId);
+      const overlay = document.getElementById('overlay_' + vidId);
+      if (!vid) return;
+      if (vid.paused) {
+        vid.play().then(() => {
+          if (overlay) overlay.classList.add('playing');
+        }).catch(err => console.log('Autoplay block:', err));
+      } else {
+        vid.pause();
+        if (overlay) overlay.classList.remove('playing');
+      }
+    };
+
+    window.toggleMute = function(vidId, btn) {
+      const vid = document.getElementById(vidId);
+      if (!vid) return;
+      vid.muted = !vid.muted;
+      btn.textContent = vid.muted ? 'Som 🔇' : 'Som 🔊';
+    };
+
+    // Auto-attempt playback for HTML5 videos on render
+    function initVideoAutoplay() {
+      setTimeout(() => {
+        document.querySelectorAll('.media-container video').forEach(vid => {
+          const vidId = vid.id;
+          const overlay = document.getElementById('overlay_' + vidId);
+          vid.play().then(() => {
+            if (overlay) overlay.classList.add('playing');
+          }).catch(() => {
+            if (overlay) overlay.classList.remove('playing');
+          });
+        });
+      }, 300);
+    }
+
+    // Render Page Content
+    function render() {
+      document.title = `${data.name} — ${data.role}`;
+      document.getElementById('brandName').textContent = data.name;
+      document.getElementById('captionName').textContent = data.name;
+      document.getElementById('footerName').textContent = data.name;
+      document.getElementById('aboutName').textContent = data.name.split(' ')[0];
+      document.getElementById('signature').textContent = data.name;
+      document.getElementById('role').textContent = data.role;
+      document.getElementById('headline').innerHTML = esc(data.headline).replace(/(história|cuidado|você|ideia|ideias)/i, '<em>$1</em>');
+      document.getElementById('intro').textContent = data.intro;
+      document.getElementById('bio').textContent = data.bio;
+      document.getElementById('profilePhoto').src = data.photo;
+      document.getElementById('aboutPhoto').src = data.photo;
+      document.getElementById('heroLocation').textContent = data.location;
+      document.getElementById('whatsappLink').href = `https://wa.me/${data.whatsapp.replace(/\D/g, '')}`;
+      document.getElementById('emailLink').href = `mailto:${data.email}`;
+
+      // Render Services Grid
+      document.getElementById('servicesGrid').innerHTML = data.services.map((s, i) => {
+        let mediaHtml = s.mediaType === 'video'
+          ? getEmbedMediaHtml(s.mediaUrl, true)
+          : `<img src="${esc(s.mediaUrl || defaultPhoto)}" alt="${esc(s.title)}">`;
+        
+        return `
+          <article class="service-card">
+            <div class="media-container">
+              <span class="service-number">0${i + 1}</span>
+              ${mediaHtml}
+            </div>
+            <h3>${esc(s.title)}</h3>
+            <p>${esc(s.description)}</p>
+            <a class="service-link" href="#contato">Quero saber mais <span>→</span></a>
+          </article>
+        `;
+      }).join('');
+
+      // Render Gallery / Portfolio
+      let items = data.gallery.length ? data.gallery : [{ type: 'image', url: data.photo }];
+      document.getElementById('galleryGrid').innerHTML = items.map((item, i) => {
+        let content = item.type === 'video'
+          ? getEmbedMediaHtml(item.url)
+          : `<img src="${esc(item.url)}" alt="Portfólio ${i + 1}">`;
+        return `<div class="gallery-item media-container">${content}</div>`;
+      }).join('');
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      initVideoAutoplay();
+    }
+
+    // Populate Editor Inputs
+    function fillEditor() {
+      document.getElementById('editName').value = data.name;
+      document.getElementById('editRole').value = data.role;
+      document.getElementById('editHeadline').value = data.headline;
+      document.getElementById('editIntro').value = data.intro;
+      document.getElementById('editBio').value = data.bio;
+      document.getElementById('editWhatsapp').value = data.whatsapp;
+      document.getElementById('editEmail').value = data.email;
+      document.getElementById('editLocation').value = data.location;
+      document.getElementById('editAdminUser').value = data.adminUser;
+      document.getElementById('editAdminPass').value = data.adminPass;
+      document.getElementById('profilePreview').src = data.photo;
+      renderServiceEditor();
+      renderGalleryEditor();
+    }
+
+    function renderServiceEditor() {
+      document.getElementById('serviceEditor').innerHTML = data.services.map((s, i) => `
+        <div class="service-edit" data-index="${i}">
+          <div class="service-edit-top">
+            <strong>Serviço ${i + 1}</strong>
+            <button class="text-button remove-service" data-index="${i}">Remover</button>
+          </div>
+          <div class="field">
+            <label>Título do serviço</label>
+            <input data-key="title" value="${esc(s.title)}">
+          </div>
+          <div class="field">
+            <label>Descrição</label>
+            <textarea data-key="description">${esc(s.description)}</textarea>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Tipo de Mídia</label>
+              <select class="service-mediatype" data-index="${i}">
+                <option value="image" ${s.mediaType === 'image' ? 'selected' : ''}>Imagem</option>
+                <option value="video" ${s.mediaType === 'video' ? 'selected' : ''}>Vídeo (Reels/MP4)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>URL da Mídia (YouTube / MP4 / Img)</label>
+              <input data-key="mediaUrl" value="${esc(s.mediaUrl)}" placeholder="https://...">
+            </div>
+          </div>
+          <div class="upload-row">
+            <label class="upload-label">↑ Upload Arquivo Local<input type="file" accept="image/*,video/*" class="service-upload" data-index="${i}"></label>
+          </div>
+        </div>`).join('');
+    }
+
+    function renderGalleryEditor() {
+      document.getElementById('galleryEditor').innerHTML = data.gallery.map((item, i) => `
+        <div class="gallery-thumb-wrap">
+          ${item.type === 'video' 
+            ? `<div class="gallery-thumb" style="display:flex;align-items:center;justify-content:center;background:#19251f;color:#fff;font-size:10px">▶ Video</div>` 
+            : `<img class="gallery-thumb" src="${esc(item.url)}" alt="Thumb">`}
+          <button type="button" data-index="${i}" class="remove-gallery" title="Remover">×</button>
+        </div>`).join('');
+    }
+
+    // FileReader Helper
+    function readFileAsDataURL(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) return resolve(null);
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Modal Control & Authentication Logic
+    document.getElementById('openEditor').onclick = () => {
+      if (authenticated) {
+        fillEditor();
+        document.getElementById('editorBackdrop').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.getElementById('loginBackdrop').classList.add('open');
+        document.getElementById('loginError').style.display = 'none';
+        document.getElementById('loginUser').focus();
+      }
+    };
+
+    document.getElementById('closeLogin').onclick = () => {
+      document.getElementById('loginBackdrop').classList.remove('open');
+    };
+
+    document.getElementById('loginForm').onsubmit = (e) => {
+      e.preventDefault();
+      const u = document.getElementById('loginUser').value.trim();
+      const p = document.getElementById('loginPass').value.trim();
+      if (u === data.adminUser && p === data.adminPass) {
+        authenticated = true;
+        document.getElementById('loginBackdrop').classList.remove('open');
+        document.getElementById('loginUser').value = '';
+        document.getElementById('loginPass').value = '';
+        fillEditor();
+        document.getElementById('editorBackdrop').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    };
+
+    function closeEditor() {
+      document.getElementById('editorBackdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('closeEditor').onclick = closeEditor;
+    
+    document.getElementById('logoutButton').onclick = () => {
+      authenticated = false;
+      closeEditor();
+    };
+
+    // Upload & Inputs Events
+    document.getElementById('profileUpload').onchange = async e => {
+      try {
+        const url = await readFileAsDataURL(e.target.files[0]);
+        if (url) {
+          data.photo = url;
+          document.getElementById('profilePreview').src = url;
+        }
+      } catch { alert('Erro ao carregar a imagem.'); }
+    };
+
+    document.getElementById('galleryUpload').onchange = async e => {
+      for (const file of [...e.target.files]) {
+        try {
+          const url = await readFileAsDataURL(file);
+          if (url) data.gallery.push({ type: 'image', url });
+        } catch {}
+      }
+      renderGalleryEditor();
+      e.target.value = '';
+    };
+
+    document.getElementById('galleryVideoUpload').onchange = async e => {
+      const file = e.target.files[0];
+      if (file) {
+        try {
+          const url = await readFileAsDataURL(file);
+          if (url) data.gallery.push({ type: 'video', url });
+        } catch { alert('Erro ao carregar vídeo.'); }
+      }
+      renderGalleryEditor();
+      e.target.value = '';
+    };
+
+    document.getElementById('addGalleryUrlBtn').onclick = () => {
+      const input = document.getElementById('galleryUrlAdd');
+      const val = input.value.trim();
+      if (val) {
+        const isVid = val.includes('.mp4') || val.includes('youtube.com') || val.includes('youtu.be') || val.includes('instagram.com');
+        data.gallery.push({ type: isVid ? 'video' : 'image', url: val });
+        input.value = '';
+        renderGalleryEditor();
+      }
+    };
+
+    document.getElementById('serviceEditor').addEventListener('input', e => {
+      const card = e.target.closest('.service-edit');
+      if (card && e.target.dataset.key) {
+        data.services[+card.dataset.index][e.target.dataset.key] = e.target.value;
+      }
+    });
+
+    document.getElementById('serviceEditor').addEventListener('change', async e => {
+      if (e.target.classList.contains('service-mediatype')) {
+        const i = +e.target.dataset.index;
+        data.services[i].mediaType = e.target.value;
+        renderServiceEditor();
+      }
+      if (e.target.classList.contains('service-upload')) {
+        const i = +e.target.dataset.index;
+        try {
+          const file = e.target.files[0];
+          data.services[i].mediaType = file.type.startsWith('video/') ? 'video' : 'image';
+          data.services[i].mediaUrl = await readFileAsDataURL(file);
+          renderServiceEditor();
+        } catch { alert('Erro ao processar arquivo.'); }
+      }
+    });
+
+    document.getElementById('serviceEditor').addEventListener('click', e => {
+      if (e.target.classList.contains('remove-service')) {
+        data.services.splice(+e.target.dataset.index, 1);
+        renderServiceEditor();
+      }
+    });
+
+    document.getElementById('addService').onclick = () => {
+      data.services.push({ title: 'Novo serviço', description: 'Descrição do serviço.', mediaType: 'image', mediaUrl: defaultPhoto });
+      renderServiceEditor();
+    };
+
+    document.getElementById('galleryEditor').onclick = e => {
+      if (e.target.classList.contains('remove-gallery')) {
+        data.gallery.splice(+e.target.dataset.index, 1);
+        renderGalleryEditor();
+      }
+    };
+
+    // Save Changes Functionality
+    document.getElementById('saveButton').onclick = () => {
+      data.name = document.getElementById('editName').value.trim() || 'Alice Ratke';
+      data.role = document.getElementById('editRole').value.trim() || 'Tráfego pago';
+      data.headline = document.getElementById('editHeadline').value.trim();
+      data.intro = document.getElementById('editIntro').value.trim();
+      data.bio = document.getElementById('editBio').value.trim();
+      data.whatsapp = document.getElementById('editWhatsapp').value.trim();
+      data.email = document.getElementById('editEmail').value.trim();
+      data.location = document.getElementById('editLocation').value.trim();
+      
+      const newU = document.getElementById('editAdminUser').value.trim();
+      const newP = document.getElementById('editAdminPass').value.trim();
+      if (newU) data.adminUser = newU;
+      if (newP) data.adminPass = newP;
+
+      try {
+        localStorage.setItem('apresentacao-personalizada-alice', JSON.stringify(data));
+      } catch {
+        alert('Atenção: O armazenamento do seu navegador está cheio. Tente utilizar links/URLs de vídeos ou arquivos menores.');
+        return;
+      }
+      render();
+      closeEditor();
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    };
+
+    document.getElementById('resetButton').onclick = () => {
+      if (confirm('Restaurar o conteúdo e as credenciais de exemplo?')) {
+        data = clone(defaults);
+        localStorage.removeItem('apresentacao-personalizada-alice');
+        fillEditor();
+        render();
+      }
+    };
+
+    window.onload = function() {
+      render();
+    };
+  </script>
+</body>
+</html>
